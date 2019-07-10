@@ -72,6 +72,7 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
+    "semantic-ui-react": "^0.87.3",
     "style-loader": "^0.23.1"
   },
   "eslintConfig": {
