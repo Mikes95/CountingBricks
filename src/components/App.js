@@ -7,6 +7,7 @@ import Async from 'react-code-splitting'
 import Login from './Auth/Login'
 import Signup from './Auth/Signup'
 import Header from './Header'
+import Webcam from './Webcam'
 import { Body } from './Styled'
 
 const Home = () => <Async load={import('./Home')} />
@@ -15,7 +16,7 @@ const App = ({ user }) => (
   <Body>
     <Header />
     <Switch>
-      {user.token && <Route path="/" component={Home} />}
+      <Route path="/" component={Home} />
       <Route path="/signup" component={Signup} />
       <Route path="/login" component={Login} />
       <Redirect to="/login" />

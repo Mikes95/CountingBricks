@@ -17,7 +17,7 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     hot: true,
-    host: '0.0.0.0',
+    host: 'localhost',
     contentBase: resolve(__dirname, '../assets'),
     publicPath: '/',
     historyApiFallback: true,
@@ -29,6 +29,11 @@ module.exports = {
         include: [resolve(__dirname, '../src'), resolve(__dirname)],
         use: 'babel-loader',
       },
+      
+      {
+        test: /\.(css|less)$/,
+        use: ["style-loader", "css-loader"]
+      }
     ],
   },
   plugins: [

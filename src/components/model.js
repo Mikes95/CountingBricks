@@ -6,7 +6,7 @@ import Camera, { FACING_MODES, IMAGE_TYPES } from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 
 import './style.min.css'
-import { sendPicture, doStuff } from '../actions'
+import { sendPicture, doStuff } from '../../actions'
 
 
 

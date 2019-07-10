@@ -29,6 +29,11 @@ module.exports = {
         include: [resolve(__dirname, '../src')],
         use: 'babel-loader',
       },
+      ,
+      {
+        test: /\.(css|less)$/,
+        use: ["style-loader", "css-loader"]
+      }
     ],
   },
   plugins: [
@@ -44,7 +49,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      title: 'redux-react-starter',
+      title: 'CountingBricks',
       template: 'webpack/template.html',
     }),
     new PreloadWebpackPlugin({

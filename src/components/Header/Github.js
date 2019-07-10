@@ -15,7 +15,7 @@ class Github extends React.Component {
 
   render = () => (
     <GithubLink
-      href="http://github.com/didierfranc/redux-react-starter"
+      href="https://github.com/Anubi95mk/CountingBricks.git"
       target="_blank"
       rel="noopener"
     >
