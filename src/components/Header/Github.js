@@ -8,7 +8,7 @@ class Github extends React.Component {
   }
 
   componentDidMount = async () => {
-    const url = 'https://api.github.com/repos/didierfranc/redux-react-starter'
+    const url = 'https://github.com/Anubi95mk/CountingBricks.git'
     const res = await fetch(url).then(r => r.json())
     this.setState({ count: res.stargazers_count })
   }

@@ -8,7 +8,9 @@ import 'react-html5-camera-photo/build/css/index.css';
 import './style.min.css'
 import { sendPicture, doStuff } from '../actions'
 
-
+const videoConstraints = {
+  facingMode: "environment"
+};
 
 class CountingBricks extends React.Component {
   constructor(props) {
@@ -21,6 +23,7 @@ class CountingBricks extends React.Component {
 
     }
     this.changeFacingMode = this.changeFacingMode.bind(this)
+    this.capture = this.capture.bind(this)
 
   }
   changeFacingMode() {
@@ -60,11 +63,20 @@ class CountingBricks extends React.Component {
   };
  
 
-  capture = () => {
+  capture(){
     const imageSrc = this.webcam.getScreenshot();
     console.log(imageSrc)
     this.props.sendPicture(imageSrc)
-  };
+  }
+  componentDidUpdate() {
+    
+      //this.props.user.response ? this.interval = setInterval(() => this.capture(), 100) : ''
+      //this.props.user.response ? this.capture(): ''
+    
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   render() {
 
 
@@ -91,7 +103,7 @@ class CountingBricks extends React.Component {
               ref={this.setRef}
               screenshotFormat="image/jpeg"
               width={350}
-              //videoConstraints={videoConstraints}
+              videoConstraints={videoConstraints}
             />
             <button onClick={this.capture}>Capture photo</button>
            { /* <Camera
@@ -120,8 +132,9 @@ class CountingBricks extends React.Component {
               
             /> */}
           </div>
+        
         </div>
-
+        <div className='footer'> footer</div>
         {/*        <div className='infoContainer'>
           <div className='lastNumbers'>
 

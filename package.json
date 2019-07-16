@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Get started with ES2015, React and Redux. Including Webpack, ESLint, react-router, fetch ...",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "start": "webpack-dev-server --https --open --config webpack/webpack.config.dev.js",
     "build": "rm -rf dist && webpack --config webpack/webpack.config.prod.js  && cp -a assets/ dist/",
     "prod": "serve ./dist -s",
     "lint": "eslint src",

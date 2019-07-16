@@ -41,6 +41,10 @@ export const loginWithToken = () => (dispatch, getState) => {
 
 export const sendPicture = foto => dispatch => {
   console.log('Upload')
+  dispatch({
+    type: 'RESPONSE',
+    payload: false,
+  })
   var data = { 'data': foto }
   fetch('http://localhost:5000/', {
     method: 'POST',
@@ -61,6 +65,10 @@ export const sendPicture = foto => dispatch => {
         type: 'SET_CLASS',
         payload: response,
       }),
+      dispatch({
+        type: 'RESPONSE',
+        payload: true,
+      })
     )
     .catch(err => {
       dispatch({
